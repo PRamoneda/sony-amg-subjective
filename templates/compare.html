@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare MIDI Experiments - {{ sample }}</title>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h3>We aim to inpaint the blank area</h3>
+    <midi-player src="/static/{{ experiment0_sample }}" sound-font visualizer="#visualizer0"></midi-player>
+    <midi-visualizer type="piano-roll" id="visualizer0"></midi-visualizer>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#experiment1">Experiment 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#experiment2">Experiment 2</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane container active" id="experiment1">
+            <h3>Experiment 1</h3>
+            <midi-player src="/static/{{ experiment1_sample }}" sound-font visualizer="#visualizer1"></midi-player>
+            <midi-visualizer type="piano-roll" id="visualizer1"></midi-visualizer>
+        </div>
+        <div class="tab-pane container fade" id="experiment2">
+            <h3>Experiment 2</h3>
+            <midi-player src="/static/{{ experiment2_sample }}" sound-font visualizer="#visualizer2"></midi-player>
+            <midi-visualizer type="piano-roll" id="visualizer2"></midi-visualizer>
+        </div>
+    </div>
+</div>
+
+
+<!--    <form action="/" method="post">-->
+<!--        <label for="election">Which one is better?</label>-->
+<!--        <select id="election" name="election">-->
+<!--            <option value="tie">Tie (Both are Equal)</option>-->
+<!--            <option value="experiment1">Experiment 1</option>-->
+<!--            <option value="experiment2">Experiment 2</option>-->
+<!--        </select>-->
+<!--        <input type="submit" value="Submit">-->
+<!--    </form>-->
+</body>
+</html>
