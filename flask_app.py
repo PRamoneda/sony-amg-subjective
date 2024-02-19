@@ -16,6 +16,8 @@ def compare_two(algo0, algo1, algo2):
                            experiment2_sample=algo2)
 
 
+
+
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     return send_from_directory(app.static_folder, filename)
